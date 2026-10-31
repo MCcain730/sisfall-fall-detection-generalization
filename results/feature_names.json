@@ -1,0 +1,1 @@
+["mag_mean", "mag_std", "mag_min", "mag_max", "mag_range", "rms", "sma", "peak_to_peak", "jerk_std", "vert_frac", "tilt_mean", "tilt_max", "tilt_p95", "gyro_mean", "gyro_max", "gyro_std", "rms2", "range2", "dom_freq", "spec_tot", "spec_low", "spec_mid"]

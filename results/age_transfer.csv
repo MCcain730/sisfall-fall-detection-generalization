@@ -1,0 +1,9 @@
+metric,value
+threshold (young ADL 95th pct),0.0056362174316709115
+young ADL FPR,0.05001276985712783
+elderly ADL FPR,0.09960204340831476
+elderly ADL FPR ratio (elderly/young),1.9915322365237775
+young fall-window recall,0.9979786312445856
+SE06 (single elderly faller) fall-window recall,0.10896551724137932
+SE06 n fall windows,2175.0
+SE06 ADL FPR,0.016826923076923076

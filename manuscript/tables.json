@@ -1,0 +1,269 @@
+{
+ "table1": {
+  "header": [
+   "",
+   "Subjects",
+   "Trials",
+   "Windows"
+  ],
+  "widths": [
+   2400,
+   1400,
+   1400,
+   1400
+  ],
+  "rows": [
+   [
+    "Young (SA01-SA23)",
+    "23",
+    "",
+    "116,531"
+   ],
+   [
+    "Elderly (SE01-SE15)",
+    "15",
+    "",
+    "37,606"
+   ],
+   [
+    "All",
+    "38",
+    "4,500",
+    "154,137"
+   ]
+  ],
+  "note": "SisFall trials annotated as 19 activities of daily living (2,702 trials) and 15 fall types (1,798 trials), two IMUs at 200 Hz. Windows: 1 s, 50% overlap; a fall-trial window is positive only if it overlaps the impact (peak resultant acceleration +/- 0.25 s), other fall-trial windows are kept as hard negatives."
+ },
+ "table2": {
+  "header": [
+   "Model",
+   "ROC-AUC",
+   "95% CI",
+   "PR-AUC",
+   "Recall@5%FPR (%)",
+   "F1 (%)"
+  ],
+  "widths": [
+   2200,
+   1100,
+   1700,
+   1000,
+   1500,
+   900
+  ],
+  "rows": [
+   [
+    "Logistic regression",
+    "0.997",
+    "0.996 to 0.998",
+    "0.888",
+    "99.6",
+    "85.0"
+   ],
+   [
+    "Random forest",
+    "0.997",
+    "0.995 to 0.999",
+    "0.936",
+    "99.3",
+    "85.4"
+   ],
+   [
+    "Gradient boosting",
+    "0.998",
+    "0.996 to 0.999",
+    "0.942",
+    "99.5",
+    "88.1"
+   ],
+   [
+    "Rule baseline (2.5 g + tilt)",
+    "0.927",
+    "0.916 to 0.934",
+    "0.164",
+    "0.0",
+    "28.8"
+   ]
+  ],
+  "note": "Leave-one-subject-out protocol pooled over 38 folds (window level). Recall@5%FPR: fall recall when the false-positive rate is fixed at 5%. CIs are subject-level bootstrap (500 resamples)."
+ },
+ "table3": {
+  "header": [
+   "Held-out fall type",
+   "Windows",
+   "Recall@5%FPR (%)",
+   "Mean score"
+  ],
+  "widths": [
+   2200,
+   1400,
+   2000,
+   1400
+  ],
+  "rows": [
+   [
+    "F01",
+    "3,451",
+    "12.3",
+    "0.081"
+   ],
+   [
+    "F02",
+    "3,480",
+    "11.6",
+    "0.075"
+   ],
+   [
+    "F03",
+    "3,481",
+    "9.9",
+    "0.077"
+   ],
+   [
+    "F04",
+    "3,480",
+    "13.4",
+    "0.091"
+   ],
+   [
+    "F05",
+    "3,480",
+    "34.5",
+    "0.148"
+   ],
+   [
+    "F06",
+    "3,480",
+    "13.2",
+    "0.079"
+   ],
+   [
+    "F07",
+    "3,480",
+    "9.9",
+    "0.080"
+   ],
+   [
+    "F08",
+    "3,480",
+    "8.8",
+    "0.078"
+   ],
+   [
+    "F09",
+    "3,480",
+    "8.4",
+    "0.074"
+   ],
+   [
+    "F10",
+    "3,451",
+    "8.3",
+    "0.070"
+   ],
+   [
+    "F11",
+    "3,480",
+    "8.4",
+    "0.073"
+   ],
+   [
+    "F12",
+    "3,480",
+    "8.1",
+    "0.072"
+   ],
+   [
+    "F13",
+    "3,480",
+    "8.8",
+    "0.069"
+   ],
+   [
+    "F14",
+    "3,480",
+    "7.5",
+    "0.053"
+   ],
+   [
+    "F15",
+    "3,480",
+    "7.6",
+    "0.066"
+   ],
+   [
+    "Median over types",
+    "",
+    "8.8",
+    ""
+   ]
+  ],
+  "note": "Leave-one-fall-type-out: the detector is trained with one of the 15 fall types entirely absent and tested on it at the same 5% false-positive operating point (threshold from ADL windows scored by the same model). Fall types: F01-F03 slip while walking; F04-F07 fainting while walking; F08-F10 falls when trying to sit; F11-F13 falls when trying to stand; F14-F15 vertical/forward fainting falls."
+ },
+ "table4": {
+  "header": [
+   "Cross-age deployment metric",
+   "Value"
+  ],
+  "widths": [
+   4200,
+   1600
+  ],
+  "rows": [
+   [
+    "Young ADL false-alarm rate",
+    "5.00%"
+   ],
+   [
+    "Elderly ADL false-alarm rate",
+    "9.96%"
+   ],
+   [
+    "Inflation ratio (elderly / young)",
+    "1.99x"
+   ],
+   [
+    "SE06 (single elderly faller) ADL false-alarm rate",
+    "1.68%"
+   ],
+   [
+    "Young fall-window recall at the same threshold",
+    "99.8%"
+   ],
+   [
+    "SE06 fall-window recall at the same threshold",
+    "10.9%"
+   ]
+  ],
+  "note": "Cross-age deployment test. SisFall's falls were simulated by the 23 young subjects; the 15 elderly subjects performed daily activities only (SE06 is the single exception, contributing 15 fall trials). Threshold: 95th percentile of the LOSO score on young ADL windows. All values from results/age_transfer.csv."
+ },
+ "table5": {
+  "header": [
+   "Sensor-position variant",
+   "ROC-AUC",
+   "PR-AUC",
+   "Recall@5%FPR (%)"
+  ],
+  "widths": [
+   3000,
+   1300,
+   1300,
+   1700
+  ],
+  "rows": [
+   [
+    "Waist-unit features only",
+    "0.998",
+    "0.933",
+    "99.6"
+   ],
+   [
+    "Chest-unit features only",
+    "0.988",
+    "0.795",
+    "92.6"
+   ]
+  ],
+  "note": "Device-position transfer: the same gradient-boosting protocol restricted to the features of one body-worn unit (waist ADXL345 vs chest MMA8451Q), leave-one-subject-out."
+ }
+}

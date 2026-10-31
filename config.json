@@ -1,0 +1,14 @@
+{
+  "project": "sports-sci-paper-11",
+  "theme": "Fall detection generalization on SisFall: LOSO subjects and unseen fall types",
+  "seed": 20261031,
+  "raw_zip": "data/raw/SisFall.zip",
+  "fs": 200,
+  "window_s": 1.0,
+  "overlap": 0.5,
+  "adxl_lsb_g": 0.00390625,
+  "mma_lsb_g": 0.001953125,
+  "gyro_lsb_dps": 0.0695264,
+  "impact_g": 2.5,
+  "loso_min_windows": 5
+}
